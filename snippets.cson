@@ -1,0 +1,516 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+# -----------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------
+# ----------   --------------------   -------------------
+# ----------   --------------------   -------------------
+# ----------   --------------------   -------------------
+# ----------   --------------------   -------------------
+# ----------   --------------------   -------------------
+# ----------                          -------------------
+# ----------   --------------------   -------------------
+# ----------   --------------------   -------------------
+# ----------   --------------------   -------------------
+# ----------   --------------------   -------------------
+# ----------   --------------------   -------------------
+# ----------   --------------------   -------------------
+# -----------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------
+# HTML
+'.text.html.basic':
+  # H001 - a Plus
+  'HTML - a Plus':
+    'prefix': 'aa'
+    'body': '<a href="#" target="_blank" ${1:class="${2}"}>${3}</a>${4}'
+  # H002 - span Plus
+  'HTML - span Plus':
+    'prefix': 'ss'
+    'body': '<span ${1:class="${2}"}>${3}</span>${4}'
+  # H003 - img Plus
+  'HTML - img Plus':
+    'prefix': 'ii'
+    'body': '<a href="#" target="_blank" ${1:class="${2}"}><img src="static/images/${3}"></a>${4}'
+  # G001 - Gov List
+  'HTML - Gov List':
+    'prefix': 'shlist'
+    'body': """
+      <!-- Gov List -->
+      <ul class="gov_${1}list">
+        <li>${2:<b></b>}<a href="#" target="_blank">标题标题标题标题...</a>${3:<span>2019-03-01</span>}</li>
+        <li>${2:<b></b>}<a href="#" target="_blank">标题标题标题标题...</a>${3:<span>2019-03-01</span>}</li>
+        <li>${2:<b></b>}<a href="#" target="_blank">标题标题标题标题...</a>${3:<span>2019-03-01</span>}</li>
+        <li>${2:<b></b>}<a href="#" target="_blank">标题标题标题标题...</a>${3:<span>2019-03-01</span>}</li>
+        <li>${2:<b></b>}<a href="#" target="_blank">标题标题标题标题...</a>${3:<span>2019-03-01</span>}</li>
+      </ul>
+      <!-- END Gov List -->${4}
+    """
+  # G002 - Gov Title
+  'HTML - Gov Title':
+    'prefix': 'shtitle'
+    'body':"""
+      <!-- Gov Title -->
+      <div class="gov_title${1}"><p>${2:标题}</p><a href="#" target="_blank">更多</a></div>
+      <!-- END Gov Title -->${3}
+    """
+  # G003 - Gov Search Box
+  'HTML - Search Box':
+    'prefix': 'shsearch'
+    'body': """
+      <!-- Gov Search -->
+      <form class="${1:gov}_searchbox">
+        <input type="text" placeholder="请输入关键字..." class="gov_sei">
+        <input type="button" value="搜索" class="gov_seb">
+      </form>
+      <!-- END Gov Search -->${2}
+    """
+  # G004 - Gov Line
+  'HTML - Gov Line':
+    'prefix': 'shline'
+    'body': 'gov_line'
+  # G005 - Gov Link
+  'HTML - Gov Link':
+    'prefix': 'shlk'
+    'body': """
+      <!-- Gov Link -->
+			<div class="gov_linkbox">
+				<a href="#" target="_blank">${1:标题标题}</a>
+				<a href="#" target="_blank">${2:标题标题}</a>
+				<a href="#" target="_blank">${3:标题标题}</a>
+			</div>
+			<!-- END Gov Link -->${4}
+    """
+  # G006 - Gov Sections
+  'HTML - Gov Sections':
+    'prefix': 'shsec'
+    'body': """
+      <!-- Gov Sections -->
+      <div class="gov_selectcbox">
+      	<select name="">
+      		<option value="1">${1:标题标题}</option>
+      		<option value="2">2</option>
+      	</select>
+      	<select name="">
+      		<option value="1">标题标题</option>
+      		<option value="2">2</option>
+      	</select>
+      	<select name="">
+      		<option value="1">标题标题</option>
+      		<option value="2">2</option>
+      	</select>
+      </div>
+      <!-- END Gov Sections-->${2}
+    """
+  # G007 - Gov Nav
+  'HTML - Gov Nav':
+    'prefix': 'shnav'
+    'body': """
+      <!-- Gov Nav -->
+      <div class="gov_navbox">
+      	<ul class="gov_navmain">
+      		<li><a href="#" target="_blank">${1:标题}</a></li>
+      		<li><a href="#" target="_blank">标题</a></li>
+      		<li><a href="#" target="_blank">标题</a></li>
+      		<li><a href="#" target="_blank">标题</a></li>
+      		<li><a href="#" target="_blank">标题</a></li>
+      		<li><a href="#" target="_blank">标题</a></li>
+      	</ul>
+      </div>
+      <!-- END Gov Nav -->${2}
+    """
+  # G008 - Gov Gov Vertical spacing of Multi-Line Text
+  'HTML - Gov Gov Vertical spacing of Multi-Line Text':
+    'prefix': 'shvs'
+    'body': """
+      <!-- Gov Vertical spacing of Multi-Line Text -->
+      <a href="#" target="_blank" class="gov_vstx">
+      	<span>${1:标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题}</span>
+      </a>
+      <!-- END Gov Vertical spacing of Multi-Line Text -->
+    """
+  # G009 - Gov LinkPic with Up and Down
+  'HTML - Gov LinkPic with Up and Down':
+    'prefix': 'shpicud'
+    'body':"""
+      <!-- PicLink -->
+      <div class="gov_piclinkup">
+        <a href="#" target="_blank"><img src="static/images/${1}"><span>${2:标题标题}</span></a>
+        <a href="#" target="_blank"><img src="static/images/${1}"><span>${3:标题标题}</span></a>
+        <a href="#" target="_blank"><img src="static/images/${1}"><span>${4:标题标题}</span></a>
+        <a href="#" target="_blank"><img src="static/images/${1}"><span>${5:标题标题}</span></a>
+        <a href="#" target="_blank"><img src="static/images/${1}"><span>${6:标题标题}</span></a>
+      </div>
+      <!-- END PicLink -->${7}
+    """
+  # G010 - Gov LinkPic with Left and Right
+  'HTML - Gov LinkPic with Left and Right':
+    'prefix': 'shpiclr'
+    'body': """
+      <!-- PicLink -->
+      <div class="gov_piclinklr">
+        <a href="#" target="_blank"><img src="static/images/${1}"><span>${2:标题标题}</span></a>
+        <a href="#" target="_blank"><img src="static/images/${1}"><span>${3:标题标题}</span></a>
+        <a href="#" target="_blank"><img src="static/images/${1}"><span>${4:标题标题}</span></a>
+        <a href="#" target="_blank"><img src="static/images/${1}"><span>${5:标题标题}</span></a>
+        <a href="#" target="_blank"><img src="static/images/${1}"><span>${6:标题标题}</span></a>
+      </div>
+      <!-- END PicLink -->${7}
+    """
+  # G011 - Gov Auto Width In HTML
+  'HTML - Gov Auto Width In HTML':
+    'prefix': 'shautowidthweb'
+    'body': 'gov_autowidthbox'
+  # G012 - Gov Auto Width with Left
+  'HTML - Gov Auto Width with Left':
+    'prefix': 'shautowidthleft'
+    'body':"""
+    	<div class="gov_awleftbox fl">${1}</div>
+    	<div class="gov_awrightbox"></div>
+    """
+  # G013 - Gov Auto Width with Right
+  'HTML - Gov Auto Width with Right':
+    'prefix': 'shautowidthright'
+    'body':"""
+      <div class="gov_awleftbox">${1}</div>
+      <div class="gov_awrightbox fr"></div>
+    """
+  # G014 - Gov SurSlide
+  'HTML - Gov SurSlide':
+    'prefix': 'shslide'
+    'body': """
+      <!-- SurSlide -->
+      <div class="hiSlideBox">
+          <ul class="hiSlider">
+              <li class="hiSlider-item">
+                  <a href="#" target="_blank" class="hiSliderTitle">标题标题标题标题标题...1</a>
+                  <a href="#" target="_blank" class="hiSliderImg"><img src="static/images/newpic.jpg" alt=""></a>
+              </li>
+              <li class="hiSlider-item">
+                  <a href="#" target="_blank" class="hiSliderTitle">标题标题标题标题标题...2</a>
+                  <a href="#" target="_blank" class="hiSliderImg"><img src="static/images/newpic.jpg" alt=""></a>
+              </li>
+              <li class="hiSlider-item">
+                  <a href="#" target="_blank" class="hiSliderTitle">标题标题标题标题标题...3</a>
+                  <a href="#" target="_blank" class="hiSliderImg"><img src="static/images/newpic.jpg" alt=""></a>
+              </li>
+              <li class="hiSlider-item">
+                  <a href="#" target="_blank" class="hiSliderTitle">标题标题标题标题标题...4</a>
+                  <a href="#" target="_blank" class="hiSliderImg"><img src="static/images/newpic.jpg" alt=""></a>
+              </li>
+          </ul>
+      </div>
+      <!-- END SurSlide -->
+    """
+  # G014 - Gov SurSlide jQuery
+  'G014 - Gov SurSlide jQuery':
+    'prefix': 'jqslide'
+    'body': """
+      <!-- SurSlide Js -->
+      <script src="static/js/SurSlide.js"></script>
+      <script>$('.hiSlider').hiSlider();</script>
+      <!-- END SurSlide Js -->
+    """
+  # G015 - Gov SurTab
+  'G015 - Gov SurTab':
+    'prefix': 'shtab'
+    'body': """
+      <!-- SurTab -->
+      <div class="SurTab">
+        <div class="SurTabMenu">
+          <ul>
+            <li><a href="#" target="_blank">${1:Tab1}</a></li>
+            <li><a href="#" target="_blank">${2:Tab2}</a></li>
+            <li><a href="#" target="_blank">${3:Tab3}</a></li>
+          </ul>
+        </div>
+        <div class="SurTabContent">
+          <div class="SurTabBox">1</div>
+          <div class="SurTabBox">2</div>
+          <div class="SurTabBox">3</div>
+        </div>
+      </div>
+      <!-- END SurTab -->
+    """
+  # G015 - Gov SurTab jQuery
+  'G015 - Gov SurTab jQuery':
+    'prefix': 'jqtab'
+    'body': """
+      <!-- SurTab Js -->
+      <script type="text/javascript" src="static/js/SurTab.js"></script>
+      <script type="text/javascript">jQuery(".SurTab").slide({titCell:".SurTabMenu li",mainCell:".SurTabContent"});</script>
+      <!-- END SurTab Js -->
+    """
+# -----------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------
+# --------------  --  --  --  --------------------------
+# -----------  -----------------------------------------
+# ---------  -------------------------------------------
+# ---------  -------------------------------------------
+# --------  --------------------------------------------
+# --------  --------------------------------------------
+# --------  --------------------------------------------
+# --------  --------------------------------------------
+# ---------  -------------------------------------------
+# ----------  ------------------------------------------
+# ------------  ----------------------------------------
+# --------------  --  --  --  --------------------------
+# -----------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------
+# CSS
+'.source.css':
+  # CSS - width 100% and auto
+  'CSS - width 100% and auto':
+    'prefix': 'ccwa'
+    'body': 'width: ${1:100}%; margin: 0 auto;${2}'
+  # CSS - width and height
+  'CSS - width and height':
+    'prefix': 'ccwh'
+    'body': 'width: ${1:0}px; height: ${2:0}px;${3}'
+  # CSS - width 100% and height
+  'CSS - width 100% and height':
+    'prefix': 'cchh'
+    'body': 'width: 100%; height: ${1}px;${2}'
+  # CSS - line-height and height
+  'CSS - line-height and height':
+    'prefix': 'cclh'
+    'body': 'line-height: ${1}px; height: ${1}px;${2}'
+  # CSS - font size and color
+  'CSS - font size and color':
+    'prefix': 'ccfc'
+    'body': 'font-size: ${1:16}px; color: #${2:000};${3}'
+  # CSS - absolute top and left
+  'CSS - absolute top and left':
+    'prefix': 'ccabtl'
+    'body': 'position: absolute;top: ${1:0}px; left: ${2:0}px;${3}'
+  # CSS - absolute top and right
+  'CSS - absolute top and right':
+    'prefix': 'ccabtr'
+    'body': 'position: absolute; top: ${1:0}px; right: ${2:0}px;${3}'
+  # CSS - absolute bottom and left
+  'CSS - absolute bottom and left':
+    'prefix': 'ccabbl'
+    'body': 'position: absolute; bottom: ${1:0}px; left: ${2:0}px;${3}'
+  # CSS - absolute bottom and right
+  'CSS - absolute bottom and right':
+    'prefix': 'ccabbr'
+    'body': 'position: absolute; bottom: ${1:0}px; right: ${2:0}px;${3}'
+  # CSS - background
+  'CSS - background':
+    'prefix': 'ccbi'
+    'body': 'background: url(../images/${1}) ${3:no-}repeat${2:-x};${4}'
+  # CSS - skyblue
+  'CSS - skyblue':
+    'prefix': 'ccbk'
+    'body': 'background-color: skyblue;${1}'
+  # G001 - Gov List
+  'CSS - Gov List':
+    'prefix': 'sclist'
+    'body': """
+      /*== Gov List ==*/
+      .gov_${1}list { overflow: hidden; width: 100%; }
+      .gov_${1}list li { position: relative; padding-left: ${3:20}px; height: ${4:34}px; line-height: ${4:34}px; }
+      .gov_${1}list b { position: absolute; top: ${8:15}px; left: ${9:0}; display: block; width: ${5:4}px; height: ${5:4}px; ${6:background-color: #${7:000};} }
+      .gov_${1}list span { ${16:position: absolute; top: 0; right: 0;} color: #${15:666};}
+      .gov_${1}list li a:hover { ${11:text-decoration: underline;}${12:color:#${13:000};} }
+      /*== END Gov List ==*/${17}
+    """
+  # G002 - Gov Title
+  'CSS - Gov Title':
+    'prefix': 'sctitle'
+    'body': """
+      /*== Gov Title ==*/
+      .gov_title${1} { position: relative; overflow: hidden; width: 100%; height: ${3:40}px; line-height: ${3:40}px; }
+      .gov_title${1} p { font-size: ${4:18}px; color: #${5:666}; }
+      .gov_title${1} a { font-size: ${6:14}px; color: #${7:666}; position: absolute; top: ${8:3}px; right: ${9:0}px; }
+      /*== END Gov Title ==*/${10}
+    """
+  # G003 - Gov Search
+  'CSS - Gov Search':
+    'prefix': 'scsearch'
+    'body': """
+      /*== Gov Search ==*/
+      .${1:gov}_searchbox { position: relative; width: ${3:300}px; height: ${6:36}px; }
+      .${1:gov}_searchbox .gov_sei{ font-size: 14px; position: absolute; top: 0; left: 0; width: ${4:238}px; height: ${7:32}px; padding-left: 10px; border: 1px solid #${8:c0c3ca}; }
+      .${1:gov}_searchbox .gov_seb{ font-size: ${9:14}px; position: absolute; top: 0; right: 0; width: ${5:50}px; height: ${6:36}px; cursor: pointer; color: #fff; border: none; background-color: #${10:2d2f93}; }
+      /*== END Gov Search==*/${11}
+    """
+  # G004 - Gov Line
+  'CSS - Gov Line':
+    'prefix': 'scline'
+    'body': """
+      /*== Gov Line ==*/
+      .${2:gov_line} a { float: left; margin-right: ${3:20}px; }
+      .${2:gov_line} a:after { content: '|'; padding-left: ${3:20}px; }
+      .${2:gov_line} a.nocb:after { content: ''; }
+      /*== END Gov Line ==*/${4}
+    """
+  # G005 - Gov Link
+  'CSS - Gov Link':
+    'prefix': 'sclk'
+    'body': """
+      /*== Gov Link ==*/
+      .gov_linkbox { overflow:hidden; width:100%; }
+      .gov_linkbox a { font-size:${1:16}px; display:block; float:left; margin-right:${3:20}px; color:#${2:666}; }
+      /*== END Gov Link ==*/${4}
+    """
+  # G006 - Gov Sections
+  'CSS - Gov Sections':
+    'prefix': 'scsec'
+    'body': """
+      /*== Gov Sections ==*/
+      .gov_selectcbox { overflow: hidden; width:100%; }
+      .gov_selectcbox select { font-size:${5:14}px; width:${1:300}px; height:${2:30}px; margin-right:${3:20}px; padding-left:${4:5}px; color:#${6:666}; border:1px solid #${7:d4d4d4}; border-radius:${8:3}px; }
+      /*== END Gov Sections ==*/${9}
+    """
+  # G007 - Gov Nav
+  'CSS - Gov Nav':
+    'prefix': 'scnav'
+    'body': """
+      /*== Gov Nav ==*/
+      .gov_navbox { line-height:${1:50}px; overflow:hidden; width:100%; height:${1:50}px; }
+      .gov_navmain { margin-left:${2:30}px; }
+      .gov_navmain li { float:left; margin-right:${3:30}px; }
+      .gov_navmain a { font-size:${4:20}px; ${6:font-weight:bold}; color:#${5:000}; }
+      .gov_navmain a:hover { color:#${7:666}; }
+      /*== END Gov Nav ==*/${8}
+    """
+  # G008 - Gov Vertical spacing of Multi-Line Text
+  'CSS - Gov Vertical spacing of Multi-Line Text':
+    'prefix': 'scvs'
+    'body': """
+      /*== Gov Vertical spacing of Multi-Line Text ==*/
+      .gov_vstx { line-height: ${2:200}px; display: block; width: ${1:500}px; min-height: ${2:200}px; padding: 0 ${3:30}px; border: ${4:1}px solid #${5:000}; }
+      .gov_vstx:hover { border: ${6:1}px solid #${7:999}; }
+      .gov_vstx span { font-size: ${8:14}px; line-height: ${9:22}px; display: inline-block; vertical-align: middle; }
+      /*== END Gov Vertical spacing of Multi-Line Text ==*/${10}
+    """
+  # G009 - Gov LinkPic with Up and Down
+  'CSS - Gov LinkPic with Up and Down':
+    'prefix': 'scpicup'
+    'body': """
+      /* Pic Link Up*/
+      .gov_piclinkup { width: ${1:80}px; height: ${2:200}px; }
+      .gov_piclinkup a { display: block; width: ${3:150}px; height: ${4:120}px; ${5:border: 1px solid #999;} float: left; margin: 0 ${6:12}px; }
+      .gov_piclinkup a img { display: block; width: ${7:50}px; height: ${8:50}px; margin: 0px auto; margin-top: ${9:20}px; margin-bottom: ${10:10}px; }
+      .gov_piclinkup a span { display: block; text-align: center; font-size: ${11:16}px; color: #${12:666}; width: ${13:100}px; margin: 0 auto; }
+      .gov_piclinkup a:hover { ${14:border: 1px solid #000;} }
+      /*END Pic Link Up*/${15}
+    """
+  # G010 - Gov LinkPic with Left and Right
+  'CSS - Gov LinkPic with Left and Right':
+    'prefix': 'scpiclr'
+    'body': """
+      /*Pic Link Lr*/
+      .gov_piclinklr { width: ${2:90}px; height: ${3:200}px; }
+      .gov_piclinklr a { position: relative; display: block; width: ${4:150}px; height: ${5:120}px; ${6:border: 1px solid #999;} float: left; margin: 0 ${7:12}px; display: table; margin-bottom: ${16:10}px; }
+      .gov_piclinklr a img { display: block; width: ${8:50}px; height: ${9:50}px; float: left; margin: ${10:25}px 20px 0 15px; }
+      .gov_piclinklr a span { display: block; font-size: ${11:16}px; color: #${12:666}; width: ${13:100}px; padding-right: ${14:10}px; display: table-cell; vertical-align: middle; }
+      .gov_piclinklr a:hover { ${15:border: 1px solid #000;} }
+      /*END Pic Link Lr*/${17}
+    """
+  # G011 - Gov Auto Width In HTML
+  'CSS - Gov Auto Width In HTML':
+    'prefix': 'scautowidthweb'
+    'body': """
+      /*Auto Width in HTML*/
+      .gov_autowidthbox { overflow: hidden; min-width: ${1:1100}px; margin: 0 ${2:50}px; padding-top: ${3:30}px; }
+      /*END Auto Width in HTML*/${4}
+    """
+  # G012 - Gov Auto Width with Left
+  'CSS - Gov Auto Width with Left':
+    'prefix': 'scautowidthleft'
+    'body': """
+      /*Gov Auto Width with Left*/
+      .gov_awleftbox { width: ${1:300}px; ${2:background-color: #090;} }
+      .gov_awrightbox { position: absolute; top: 0; right: 0; left: ${1:300}px; ${2:background-color: #09f;} }
+      /*END Gov Auto Width with Left*/${3}
+    """
+  # G013 - Gov Auto Width with Right
+  'CSS - Gov Auto Width with Right':
+    'prefix': 'scautowidthright'
+    'body': """
+      /*Gov Auto Width with Right*/
+      .gov_awleftbox { position: absolute; top: 0; left: 0; right: ${1:300}px; ${2:background-color: #09f;} }
+      .gov_awrightbox { width: ${1:300}px; ${2:background-color: #090;} }
+      /*END Gov Auto Width with Right*/
+    """
+  # G014 - Gov SurSlide
+  'CSS - Gov SurSlide':
+    'prefix': 'scslide'
+    'body': """
+      /*SurSlide*/
+      .hiSlideBox { width: ${1:550}px; height: ${2:400}px; overflow: hidden; }
+      .hiSlider li { position: relative; }
+      .hiSlider li .hiSliderTitle { overflow: hidden; width: 97%; height: ${3:54}px; line-height: ${3:54}px; background: rgba(0, 0, 0, .6); display: block; font-size: 18px; color: #fff; position: absolute; bottom: 0px; left: 0px; padding-left: 20px; }
+      .hiSlider li .hiSliderImg { width: ${1:550}px; height: ${2:400}px; display: block; }
+      .hiSlider-pages, .hiSlider-title { position: absolute; z-index: 3; }
+      .hiSlider-btn-prev, .hiSlider-btn-next { position: absolute; z-index: 5; top: 40%; height: 70px; width: 40px; background: url(../images/lbtprew.png) no-repeat; margin-top: -15px; text-indent: -200px; overflow: hidden; opacity: .8; filter: alpha(opacity:60); }
+      .hiSlider-btn-prev { left: 0px; }
+      .hiSlider-btn-next { right: 0px; background: url(../images/lbtnext.png) no-repeat; }
+      .hiSlider-btn-prev:hover, .hiSlider-btn-next:hover { opacity: 1; filter: alpha(opacity:100); }
+      .hiSlider-pages { bottom: 15px; right: 20px; text-align: right; }
+      .hiSlider-pages a { height: ${4:12}px; width: ${4:12}px; margin: 0 4px; display: inline-block; overflow: hidden; text-indent: -100px; font-size: 0; ${5:border-radius: 50%; background: #${6:ddd};} }
+      .hiSlider-pages a.active { background: #${7:8ec5e5}; }
+      /*END SurSlide*/${8}
+    """
+  # G015 - Gov SurTab
+  'CSS - Gov SurTab':
+    'prefix': 'sctab'
+    'body': """
+      /* SurTab */
+      .SurTab { width: ${1:500}px; }
+      .SurTab .SurTabMenu { height: ${2:30}px; line-height: ${2:30}px; ${3:background: #${4:f4f4f4};} position: relative; }
+      .SurTab .SurTabMenu ul { height: ${2:30}px; float: left; position: absolute; top: 0px; left: 0px; }
+      .SurTab .SurTabMenu ul li { float: left; cursor: pointer; ${5:margin-right: 25px};}
+      .SurTab .SurTabMenu ul li a { font-size: ${8:18}px; ${9:font-weight: bold;} height: ${2:30}px; display: block; padding: 0 ${11:10}px; }
+      .SurTab .SurTabMenu ul li.on a { ${6:background: #${7:fff};} color: #${10:000}; }
+      .SurTab .SurTabBox { overflow: hidden; width: 100%; }
+      /* END SurTab */${12}
+    """
+# -----------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------
+# ----------------                   ----------------------
+# ------------------------   ------------------------------
+# ------------------------   ------------------------------
+# ------------------------   ------------------------------
+# ------------------------   ------------------------------
+# ------------------------   ------------------------------
+# ------------------------   ------------------------------
+# ------------------------   ------------------------------
+# ------------------------   ------------------------------
+# ------------------------   ------------------------------
+# ------------------------   ------------------------------
+# ----------------   ----   -------------------------------
+# -------------------     ---------------------------------
+# -----------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------
+# JQ
+'.source.js':
+  # jQ001 - Document
+  'jQ001 - Document':
+    'prefix': 'jqdoc'
+    'body': """
+			$(document).ready(function () {
+				$("${1}").${2}(function () {
+					${3}
+				})
+			})"""
